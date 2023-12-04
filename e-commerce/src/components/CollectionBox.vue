@@ -1,7 +1,7 @@
 <template>
-    <div class="w-[1600px] h-[557px] bg-gray-200 flex justify-around ">
+    <div class="w-[1520px] h-[557px] flex justify-evenly ">
         <div v-for="c in Cbox" class="h-[557px] w-[708px] relative group"  >
-            <img :src="c.image" class="absolute bg-center ease-in-out transition-all transform duration-500" alt="">
+            <img :src="c.image" class="absolute object-scale-down" alt="">
             <div class="absolute w-[449px] h-[96px] bottom-7 flex left-32 bg-white group-hover:scale-105 transition duration-500">
                 <div class="flex flex-col h-full gap:1 w-[353px] pl-6 justify-center bg-white">
                     <p class="text-[12px] pl-3 font-normal">{{c.title}}</p>
@@ -19,13 +19,14 @@
     import {useEStore} from '../stores/eStore';
     import {mapState} from 'pinia';
 
-
+   
 
 
     export default{
         name: "CollectionBox",
         computed:{
             ...mapState(useEStore,['Cbox']),
-        }
+        },
+      
     }
 </script>

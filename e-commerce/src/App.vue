@@ -5,7 +5,6 @@
   <div class="h-fit w-full flex flex-col gap-[19px]">
     <ShopBox></ShopBox>
     <CollectionBox></CollectionBox>
-   
   </div>
   
   
