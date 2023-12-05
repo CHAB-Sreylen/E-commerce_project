@@ -8,7 +8,7 @@
       <CollectionBox></CollectionBox>
       
       <!-- tranding box -->
-      <div class="w-[1520px] h-fit flex flex-col pl-9">
+      <div class="w-full h-fit flex flex-col pl-9 mt-14">
         <p class="text-[35px]">Tranding Page</p>        
         <p class="text-[15px]">Most Popular Item</p>
         <div class="w-full h-[300px] bg-gray-500 overflow-x-auto mt-4">
@@ -16,7 +16,11 @@
         </div>
       </div>
       <!-- product item -->
+      <div class="flex flex-col gap-3 items-center">
+        <ProductIcon></ProductIcon>
+        <ProductList></ProductList>
 
+      </div>
     </div>
   </div>
 </template> 
@@ -38,13 +42,17 @@
   import Navbar from './components/Navbar.vue' 
   import ShopBox from './components/ShopBox.vue' 
   import CollectionBox from './components/CollectionBox.vue'
+  import ProductIcon from './components/icons/ProductIcon.vue'
+  import ProductList from './components/ProductList.vue'
 
   export default {
     name: "App",
     components: {
-      Navbar,
-      ShopBox,
-      CollectionBox,
+    Navbar,
+    ShopBox,
+    CollectionBox,
+    ProductIcon,
+    ProductList,
     },
   } 
 </script>

@@ -25,7 +25,9 @@ export const useEStore = defineStore('todoList', {
           title: 'Old Season Collection: 2022',
           dis: 'A New Way of Epression',
         }
+      ],
+      PCategory: [
+        "ALL" , "CROWN" , "HAIR PIN" , "HEAD PIECES"
       ]
-      
     }),
 })
