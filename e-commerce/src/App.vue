@@ -1,30 +1,5 @@
 <template>
-  <RouterView />
-  <div class="no-scrollbar">
-    <div><RouterLink to="/shop">1</RouterLink></div>
-    <div class=" w-full h-[40px] flex justify-end items-center "><p class="mr-20 text-[#7E7676]"> Sign in / Register </p></div>
-    <div class=" w-full flex justify-center items-center border-y border-[#B16969] py-1 "><img class="h-[124px] w-[279px]" src="./assets/envylogo.svg" alt=""></div>
-    <Navbar class="sticky top-0 z-50"></Navbar>
-    <div class="h-fit w-full flex flex-col gap-[19px]">
-      <ShopBox></ShopBox>
-      <CollectionBox></CollectionBox>
-      
-      <!-- tranding box -->
-      <div class="w-full h-fit flex flex-col pl-9 mt-14">
-        <p class="text-[35px]">Tranding Page</p>        
-        <p class="text-[15px]">Most Popular Item</p>
-        <div class="w-full h-[300px] bg-gray-500 overflow-x-auto mt-4">
-          
-        </div>
-      </div>
-      <!-- product item -->
-      <div class="flex flex-col gap-3 items-center">
-        <ProductIcon></ProductIcon>
-        <ProductList></ProductList>
-
-      </div>
-    </div>
-  </div>
+    <RouterView></RouterView>
 </template> 
 
 <style>
@@ -39,32 +14,12 @@
 </style>
  
 <script>
-  import { RouterLink, RouterView } from 'vue-router'
-  // import HelloWorld from './components/HelloWorld.vue'
-  import Navbar from './components/Navbar.vue' 
-  import ShopBox from './components/ShopBox.vue' 
-  import CollectionBox from './components/CollectionBox.vue'
-  import ProductIcon from './components/icons/ProductIcon.vue'
-  import ProductList from './components/ProductList.vue'
-
-  export default {
-    name: "App",
-    components: {
-<<<<<<< Updated upstream
-    Navbar,
-    ShopBox,
-    CollectionBox,
-    ProductIcon,
-    ProductList,
-=======
-      Navbar,
-      ShopBox,
-      CollectionBox,
-      RouterLink,
-      RouterView,
->>>>>>> Stashed changes
-    },
-  } 
+    import { RouterLink, RouterView } from 'vue-router'
+    export default{
+      components: {
+        RouterView
+      }
+    }
 </script>
 
  

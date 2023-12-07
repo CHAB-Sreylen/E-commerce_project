@@ -10,7 +10,15 @@ import collection2 from '../assets/collection2.png'
 
 export const useEStore = defineStore('todoList', {
     state: () => ({
-      NavTitle: ["HOME", "STORE"],
+      NavTitle: [
+        {
+          title: "HOME",
+          link: "/"
+        },{
+          title: "STORE",
+          link: "/shop"
+        }
+      ],
       NavIcons: [search,cart,heart],
 
       Cbox:[
