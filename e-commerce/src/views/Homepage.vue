@@ -11,8 +11,8 @@
         <div class="w-full h-fit flex flex-col pl-9 mt-14">
           <p class="text-[35px]">Tranding Page</p>        
           <p class="text-[15px]">Most Popular Item</p>
-          <div class="w-full h-[300px] bg-gray-500 overflow-x-auto mt-4">
-            
+          <div class="flex flex-row gap-2 w-full h-[410px] overflow-x-auto  mt-4">
+            <TrendingItem class="overflow-x-scroll"></TrendingItem>
           </div>
         </div>
         <!-- product item -->
@@ -44,6 +44,7 @@
     import CollectionBox from '../components/CollectionBox.vue'
     import ProductIcon from '../components/icons/ProductIcon.vue'
     import ProductList from '../components/ProductList.vue'
+    import TrendingItem from '../components/TrendingItem.vue'
   
     export default {
       name: "App",
@@ -55,6 +56,7 @@
       ProductList,
       RouterLink,
       RouterView,
+      TrendingItem,
       },
     } 
   </script>
