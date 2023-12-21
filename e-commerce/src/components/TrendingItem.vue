@@ -1,9 +1,9 @@
 <template>
-    <div v-for="Picture in Pic" class="flex flex-col w-[300px]">
-        <img :src="Picture.image" class="w-full h-[352px]" alt="">
+    <div class="flex flex-col min-w-[300px] min-h-[442px]">
+        <img :src="image" class="w-full h-[372px]" alt="">
         <div class="text-[20px]">
-            <p>{{ Picture.name }}</p>
-            <p>{{ Picture.price }}</p>
+            <p>{{ name }}</p>
+            <p>{{ price }}</p>
         </div>
         
 
@@ -11,7 +11,8 @@
 </template>
 
 <script>
-    import {useImage} from '../stores/images';
+
+   import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
 
    
@@ -19,9 +20,10 @@
 
     export default{
         name: "TrendingItem",
-        computed:{
-            ...mapState(useImage,['Pic']),
-        },
-      
+        props: { 
+            image: String,
+            name: String,
+            price: String,
+        }
     }
 </script>

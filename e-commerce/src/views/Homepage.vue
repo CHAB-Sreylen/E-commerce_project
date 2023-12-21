@@ -11,8 +11,10 @@
         <div class="w-full h-fit flex flex-col pl-9 mt-14">
           <p class="text-[35px]">Tranding Page</p>        
           <p class="text-[15px]">Most Popular Item</p>
-          <div class="flex flex-row gap-2 w-full h-[410px] overflow-x-auto  mt-4">
-            <TrendingItem class="overflow-x-scroll"></TrendingItem>
+          <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll">
+            <div class="w-full h-full flex overflow-x-hidden gap-16 " @mousemove="handleMouseMove" ref="scrollContent">
+              <TrendingItem v-for="item in Pic" :image="item.image" :name="item.name" :price="item.price" class="focus:bg-green-300"></TrendingItem>
+            </div>
           </div>
         </div>
         <!-- product item -->
@@ -26,6 +28,7 @@
   </template> 
   
   <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
@@ -34,6 +37,15 @@
     body{
       font-family: 'Quicksand', sans-serif;
     }
+    .scroll-x {
+      cursor:grab;
+    }
+    .scroll-x::-webkit-scrollbar{
+      display: none;
+      width: 0px-;
+    }
+
+    
   </style>
    
   <script>
@@ -45,9 +57,19 @@
     import ProductIcon from '../components/icons/ProductIcon.vue'
     import ProductList from '../components/ProductList.vue'
     import TrendingItem from '../components/TrendingItem.vue'
-  
+
+    import {useImage} from '../stores/images';
+    import {mapState} from 'pinia';
+
     export default {
       name: "App",
+      data() {
+    return {
+      isMouseDown: false,
+      startX: 0,
+      scrollLeft: 0,
+      };
+    },
       components: {
       Navbar,
       ShopBox,
@@ -58,7 +80,38 @@
       RouterView,
       TrendingItem,
       },
-    } 
+      computed:{
+            ...mapState(useImage,['Pic']),
+      },
+      methods:{
+        handleMouseDown(e) {
+        this.isMouseDown = true;
+        this.startX = e.pageX - this.$refs.scroll.offsetLeft;
+        this.scrollLeft = this.$refs.scrollContent.scrollLeft;
+        },
+        handleMouseLeave() {
+          this.isMouseDown = false;
+        },
+        handleMouseUp() {
+          this.isMouseDown = false;
+        },
+        handleMouseMove(e) {
+          if (!this.isMouseDown) return;
+          e.preventDefault();
+          const x = e.pageX - this.$refs.scroll.offsetLeft;
+          const walk = (x - this.startX) * 2; // You can adjust the multiplier for faster or slower scrolling
+          this.$refs.scrollContent.scrollLeft = this.scrollLeft - walk;
+
+          // Determine the direction
+          // if (walk < 0) {
+          //   console.log('Scrolling to the left');
+          // } else if (walk > 0) {
+          //   console.log('Scrolling to the right');
+          // }
+          }
+      }
+     }
+ 
   </script>
   
    

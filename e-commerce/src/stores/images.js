@@ -9,7 +9,7 @@ export const useImage = defineStore('images', {
     state: () => ({
       Pic: [
         {
-            image: img1,
+            image: img2,
             name: "Butterfly",
             price: "35$"
         },
