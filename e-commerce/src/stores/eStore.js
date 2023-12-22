@@ -36,6 +36,13 @@ export const useEStore = defineStore('todoList', {
       ],
       PCategory: [
         "ALL" , "CROWN" , "HAIR PIN" , "HEAD PIECES"
+      ],
+      CList:[
+        {
+          title: "Category",
+          name: ["Crown","Bracelet","Hair Pin","Earing","Rings","WAtc","a","b","c"]
+        }
       ]
+
     }),
 })

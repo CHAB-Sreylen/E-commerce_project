@@ -6,6 +6,7 @@
         <div class="h-fit w-full flex gap-[19px] justify-around px-2">
             <div class="bg-gray-200 w-[342px] flex flex-col ">
                 <Searchbar></Searchbar>
+                <List v-for="c in CList" :title="c.title" :name="c.name"></List>
             </div>
             <div class="bg-yellow-300 w-[1055px] ">jeff</div>
         </div>
@@ -15,14 +16,21 @@
 
 
 <script>
+    import {useEStore} from '../stores/eStore';
+    import {mapState} from 'pinia';
+
     import Navbar from '../components/Navbar.vue';
     import Searchbar from '../components/Searchbar.vue';
-
+    import List from '../components/List.vue';
 
     export default{
         components:{
             Navbar,
-            Searchbar
+            Searchbar,
+            List
+        },
+        computed:{
+            ...mapState(useEStore,['CList']),
         }
 
     }
