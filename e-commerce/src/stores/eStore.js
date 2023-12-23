@@ -40,8 +40,17 @@ export const useEStore = defineStore('todoList', {
       CList:[
         {
           title: "Category",
-          name: ["Crown","Bracelet","Hair Pin","Earing","Rings","WAtc","a","b","c"]
-        }
+          name: ["Crown","Bracelet","Hair Pin","Earing","Rings","Watch","a","b","c"]
+        },
+        {
+          title: "Size",
+          name: ["Extra Large","Large","Medium","Small","Extra small"]
+        },
+        {
+          title: "Collection",
+          name: ["2022","2021"]
+        },
+
       ]
 
     }),
