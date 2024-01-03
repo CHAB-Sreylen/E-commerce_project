@@ -1,0 +1,18 @@
+<template>
+    <router-link to="/login">
+        <div class=" w-full h-[40px] flex justify-end items-center "><p class="mr-20 text-[#7E7676]"> Sign in / Register </p></div>
+    </router-link>    
+    <div class=" w-full flex justify-center items-center border-y border-[#B16969] py-1 "><img class="h-[124px] w-[279px]" src="../assets/envylogo.svg" alt=""></div>
+    <Navbar class="sticky top-0 z-50"></Navbar>
+</template>
+
+<script>
+    import Navbar from '../components/Navbar.vue';
+
+    export default{
+        
+        components:{
+            Navbar,
+        }
+    }
+</script>
