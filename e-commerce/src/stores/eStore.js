@@ -14,9 +14,15 @@ export const useEStore = defineStore('todoList', {
         {
           title: "HOME",
           link: "/"
-        },{
+        },
+        {
           title: "STORE",
           link: "/shop"
+        },
+        {
+          title:"ABOUT US",
+          link:"/about"
+
         }
       ],
       NavIcons: [search,cart,heart],
@@ -51,6 +57,23 @@ export const useEStore = defineStore('todoList', {
           name: ["2022","2021"]
         },
 
+      ],
+      Trending:[
+        {
+          Img:"../src/assets/LatestProduct.jpg",
+          Title:"Latest style",
+          Detail:"Our design follow the latest  styles to help you update",
+        },
+        {
+          Img:"../src/assets/Latest.jpg",
+          Title:"Best price",
+          Detail:"Our design follow the latest  styles to help you update"
+        },
+        {
+          Img:"../src/assets/packaging.jpg",
+          Title:"Free shipping",
+          Detail:"Our design follow the latest  styles to help you update"
+        }
       ]
 
     }),
