@@ -65,7 +65,11 @@ export const useEStore = defineStore('todoList', {
           name: ["2022","2021"]
         },
 
-      ]
+      ],
+      PDT:{
+        Page: productTheme,
+        image: [pdetail1,pdetail2,pdetail3,pdetail4,pdetail5]
+      }
 
     }),
 })
