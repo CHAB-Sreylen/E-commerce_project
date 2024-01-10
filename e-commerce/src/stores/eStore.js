@@ -8,6 +8,14 @@ import search from '../assets/search.svg'
 import collection1 from '../assets/collection1.png'
 import collection2 from '../assets/collection2.png'
 
+import productTheme from '../assets/ProductTheme.png'
+
+import pdetail1 from '../assets/detail1.png'
+import pdetail2 from '../assets/detail2.png'
+import pdetail3 from '../assets/detail3.png'
+import pdetail4 from '../assets/detail4.png'
+import pdetail5 from '../assets/detail5.png'
+
 export const useEStore = defineStore('todoList', {
     state: () => ({
       NavTitle: [
@@ -57,23 +65,6 @@ export const useEStore = defineStore('todoList', {
           name: ["2022","2021"]
         },
 
-      ],
-      Trending:[
-        {
-          Img:"../src/assets/LatestProduct.jpg",
-          Title:"Latest style",
-          Detail:"Our design follow the latest  styles to help you update",
-        },
-        {
-          Img:"../src/assets/Latest.jpg",
-          Title:"Best price",
-          Detail:"Our design follow the latest  styles to help you update"
-        },
-        {
-          Img:"../src/assets/packaging.jpg",
-          Title:"Free shipping",
-          Detail:"Our design follow the latest  styles to help you update"
-        }
       ]
 
     }),

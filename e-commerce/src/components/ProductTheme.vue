@@ -1,7 +1,7 @@
 <template>
-    <div class="w-full h-fit bg-green-50 flex flex-col">
+    <div class="w-full h-fit bg-green-50 flex flex-col gap-[29px]">
         <div class="w-full h-[663px] bg-gray-300 relative">
-            <img src="../assets/ProductTheme.png" class="w-full h-[663px]" alt="">
+            <img :src="coverPage" class="w-full h-[663px]" alt="">
             <div class="bg-white w-[420px] h-[510px] flex flex-col absolute right-20 top-20 px-10 py-5 gap-2">
                 <h3 class="text-[32px] font-medium leading-tight">Rolo chain charm necklece</h3>
                 <div class="w-full h-fit flex gap-1 pt-1">
@@ -25,13 +25,26 @@
                 </div>
             </div>
         </div>
+        <div class="w-full h-fit grid grid-cols-3 px-[29px] gap-y-[29px]">
+            <img v-for="n in detailImg" :src="n" class="w-[460px] h-[480px]" alt="">
+        </div>
 
     </div>
 </template>
 
 <script>
-    export default{
-        name: "ProductTheme"
+    import {useEStore} from '../stores/eStore';
+    import {mapState} from 'pinia';
 
+    import detail1 from '../assets/detail1.png'
+    import detail2 from '../assets/detail2.png'
+
+    export default{
+        name: "ProductTheme",
+        props:{
+            coverPage: String,
+            detailImg: [],
+        },
+        
     }
 </script>
