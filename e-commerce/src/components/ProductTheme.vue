@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-fit bg-green-50 flex flex-col gap-[29px]">
+    <div class="w-full h-fit flex flex-col gap-[29px]">
         <div class="w-full h-[663px] bg-gray-300 relative">
             <img :src="coverPage" class="w-full h-[663px]" alt="">
             <div class="bg-white w-[420px] h-[510px] flex flex-col absolute right-20 top-20 px-10 py-5 gap-2">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full h-fit grid grid-cols-3 px-[29px] gap-y-[29px]">
+        <div class="w-full h-fit grid grid-cols-3 px-[29px] gap-y-[29px] ml-3">
             <img v-for="n in detailImg" :src="n" class="w-[460px] h-[480px]" alt="">
         </div>
 
