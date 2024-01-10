@@ -8,31 +8,19 @@
 
         </div>
         <div class="flex flex-col w-full h-[400px] bg-red-50">
-            <div class="flex flex-row justify-between m-10">
-                <p>Fhese are awesome items that's perfect for you</p>
-                <div class="flex flex-col gap-5">
-                    <div class="flex flex-row gap-20 justify-between border-b-2 border-black">
-                        <p>Specification</p>
-                        <fa icon="chevron-down"/>
-                    </div>
-                    <div class="flex flex-row gap-20 justify-between border-b-2 border-black">
-                        <p>Size</p>
-                        <fa icon="chevron-down"/>
-                    </div>
-                    <div class="flex flex-row gap-20 justify-between border-b-2 border-black">
-                        <p>Material</p>
-                        <fa icon="chevron-down"/>
-                    </div>
-                </div>
-            </div>
+            <itemsDetail></itemsDetail>
         </div>
-        <div class="w-full h-5 bg-gray-50">3</div>
+        <div class="flex flex-col w-full h-[800px] bg-pink-100">
+            <Feedback></Feedback>
+        </div>
     </div>
 </template>
 
 <script>
     import Navbar from '../components/Navbar.vue';
     import ProductTheme from '../components/ProductTheme.vue';
+    import itemsDetail from '../components/itemsdetail.vue';
+    import Feedback from '../components/Feedback.vue';
 
     import {useEStore} from '../stores/eStore';
     import {mapState} from 'pinia';
@@ -42,6 +30,8 @@
         components:{
             Navbar,
             ProductTheme,
+            itemsDetail,
+            Feedback,
         },
         computed: {
             ...mapState(useEStore,['PDT'])
