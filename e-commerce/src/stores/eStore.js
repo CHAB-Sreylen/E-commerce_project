@@ -69,7 +69,69 @@ export const useEStore = defineStore('todoList', {
       PDT:{
         Page: productTheme,
         image: [pdetail1,pdetail2,pdetail3,pdetail4,pdetail5]
-      }
+      },
+      Items:[
+        { 
+          DiscountBox:true,
+          discount:"-80%",
+          img:"./src/assets/HeartBracelet.png",
+          name:"HeartBracelet",
+          price:"20$",
+
+        },
+        { 
+          DiscountBox:true,
+          discount:"-75%",
+          img:"./src/assets/HeartNecklace.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+        {
+          DiscountBox:true,
+          discount:"-50%",
+          img:"./src/assets/PlumeRing.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+        {
+          DiscountBox:false,
+          img:"./src/assets/HeartBracelet.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+        {
+          DiscountBox:false,
+          img:"./src/assets/HeartBracelet.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+        {
+          DiscountBox:false,
+          img:"./src/assets/HeartBracelet.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+        {
+          DiscountBox:false,
+          img:"./src/assets/HeartBracelet.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+        {
+          DiscountBox:false,
+          img:"./src/assets/HeartBracelet.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+        {
+          DiscountBox:false,
+          img:"./src/assets/HeartBracelet.png",
+          name:"HeartBracelet",
+          price:"20$",
+        },
+      
+      ]
+
 
     }),
 })
