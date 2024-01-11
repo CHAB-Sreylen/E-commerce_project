@@ -53,8 +53,12 @@ export const useEStore = defineStore('todoList', {
       ],
       CList:[
         {
+          title:"Promotion",
+          name: ["Ring","Bracelet","Necklace","Earing","a","b","c"]
+        },
+        {
           title: "Category",
-          name: ["Crown","Bracelet","Hair Pin","Earing","Rings","Watch","a","b","c"]
+          name: ["Ring","Bracelet","Necklace","Earing","a","b","c"]
         },
         {
           title: "Size",
@@ -75,22 +79,25 @@ export const useEStore = defineStore('todoList', {
           DiscountBox:true,
           discount:"-80%",
           img:"./src/assets/HeartBracelet.png",
-          name:"HeartBracelet",
-          price:"20$",
+          name:"Heart Bracelet",
+          promotion:true,
+          baseprice:"100$",
+          price:"50$",
 
         },
         { 
           DiscountBox:true,
           discount:"-75%",
           img:"./src/assets/HeartNecklace.png",
-          name:"HeartBracelet",
-          price:"20$",
+          name:"Heart Necklace",
+          promotion:true,
+          price:"50$",
         },
         {
           DiscountBox:true,
           discount:"-50%",
           img:"./src/assets/PlumeRing.png",
-          name:"HeartBracelet",
+          name:"Plume Ring",
           price:"20$",
         },
         {
