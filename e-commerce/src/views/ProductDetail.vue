@@ -21,6 +21,8 @@
     import ProductTheme from '../components/ProductTheme.vue';
     import itemsDetail from '../components/itemsdetail.vue';
     import Feedback from '../components/Feedback.vue';
+    import { RouterLink } from 'vue-router';
+
 
     import {useEStore} from '../stores/eStore';
     import {mapState} from 'pinia';
@@ -32,6 +34,7 @@
             ProductTheme,
             itemsDetail,
             Feedback,
+            RouterLink
         },
         computed: {
             ...mapState(useEStore,['PDT'])

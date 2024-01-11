@@ -49,7 +49,15 @@ export const useEStore = defineStore('todoList', {
         }
       ],
       PCategory: [
-        "ALL" , "CROWN" , "HAIR PIN" , "HEAD PIECES"
+        { 
+          name: "ALL",
+          link: "/"
+        } 
+        , 
+        {
+          name: "CROWN",
+          link: "/skdfadsj"
+        }
       ],
       CList:[
         {

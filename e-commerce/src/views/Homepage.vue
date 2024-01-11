@@ -21,6 +21,7 @@
         <div class="flex flex-col gap-3 items-center">
           <ProductIcon></ProductIcon>
           <ProductList></ProductList>
+          <RouterView></RouterView>
         </div>
         <HomeView></HomeView>
       </div>
@@ -57,6 +58,7 @@
     import ProductIcon from '../components/icons/ProductIcon.vue'
     import ProductList from '../components/ProductList.vue'
     import TrendingItem from '../components/TrendingItem.vue'
+
 
     import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
