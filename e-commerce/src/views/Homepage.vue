@@ -6,10 +6,27 @@
       <div class="h-fit w-full flex flex-col gap-[19px]">
         <ShopBox></ShopBox>
         <CollectionBox></CollectionBox>
-        
+        <!-- promotion box -->
+        <div class="w-full h-fit flex flex-col pl-9 mt-14">
+          <p class="text-[35px]">Promotion</p>        
+          <p class="text-[15px]">Most Popular Item</p>
+          <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll" >
+            
+            <div class="w-full h-full flex overflow-x-hidden gap-16 " @mousemove="handleMouseMove" ref="scrollContent">
+                    <Items v-for="i in Items"
+                    :promotion="i.promotion"  
+                    :baseprice="i.baseprice"
+                    :DiscountBox="i.DiscountBox" 
+                    :discount="i.discount" 
+                    :img = "i.img" :name="i.name" 
+                    :price="i.price"> </Items>
+                </div>
+                <!-- flex flex-wrap justify-between overflow-x-hidden w-full h-full -->
+          </div>
+        </div>
         <!-- tranding box -->
         <div class="w-full h-fit flex flex-col pl-9 mt-14">
-          <p class="text-[35px]">Tranding Page</p>        
+          <p class="text-[35px]">Trending Page</p>        
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll">
             <div class="w-full h-full flex overflow-x-hidden gap-16 " @mousemove="handleMouseMove" ref="scrollContent">
@@ -58,10 +75,15 @@
     import ProductIcon from '../components/icons/ProductIcon.vue'
     import ProductList from '../components/ProductList.vue'
     import TrendingItem from '../components/TrendingItem.vue'
+<<<<<<< Updated upstream
 
 
+=======
+    import Items from '../components/Items.vue'
+>>>>>>> Stashed changes
     import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
+import { useEStore } from '../stores/eStore'
 
     export default {
       name: "App",
@@ -81,9 +103,11 @@
       RouterLink,
       RouterView,
       TrendingItem,
+      Items,
       },
       computed:{
             ...mapState(useImage,['Pic']),
+            ...mapState(useEStore,['Items']),
       },
       methods:{
         handleMouseDown(e) {

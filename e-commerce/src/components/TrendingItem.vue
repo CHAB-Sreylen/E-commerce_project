@@ -5,8 +5,6 @@
             <p>{{ name }}</p>
             <p>{{ price }}</p>
         </div>
-        
-
     </div>
 </template>
 
