@@ -11,8 +11,7 @@
           <p class="text-[35px]">Promotion</p>        
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll" >
-            
-            <div class="w-full h-full flex overflow-x-hidden gap-16 " @mousemove="handleMouseMove" ref="scrollContent">
+            <div class="w-full h-full flex overflow-x-hidden gap-5 " @mousemove="handleMouseMove" ref="scrollContent">
                     <Items v-for="i in Items"
                     :promotion="i.promotion"  
                     :baseprice="i.baseprice"
@@ -21,7 +20,6 @@
                     :img = "i.img" :name="i.name" 
                     :price="i.price"> </Items>
                 </div>
-                <!-- flex flex-wrap justify-between overflow-x-hidden w-full h-full -->
           </div>
         </div>
         <!-- tranding box -->
@@ -75,12 +73,8 @@
     import ProductIcon from '../components/icons/ProductIcon.vue'
     import ProductList from '../components/ProductList.vue'
     import TrendingItem from '../components/TrendingItem.vue'
-<<<<<<< Updated upstream
 
-
-=======
     import Items from '../components/Items.vue'
->>>>>>> Stashed changes
     import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
 import { useEStore } from '../stores/eStore'
