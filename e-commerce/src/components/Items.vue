@@ -1,6 +1,10 @@
 <template>
     <div class="flex flex-col mb-10">
+<<<<<<< HEAD
         <div class="w-[255px] h-[350px] bg-[#FFF2F2] flex flex-col relative">
+=======
+        <div class="min-w-[255px] min-h-[350px] bg-[#FFF2F2] flex flex-col relative">
+>>>>>>> main
             <div class="flex justify-end">
                 <div class="w-[60px] h-[30px] bg-[#FF6289] flex justify-center items-center rounded-2xl absolute top-3 right-3" v-if="DiscountBox==true">
                     <p class="text-[14px] font-[500] text-white">{{ discount }}</p>
@@ -28,8 +32,11 @@
     
     
 </template>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
 <script>
 export default{
     name:"Items" ,

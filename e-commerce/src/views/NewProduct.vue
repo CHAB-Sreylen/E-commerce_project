@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class=" w-4/5 h-fit grid grid-cols-4"  >
         <Items class="pBox" v-for="i in Items.slice(0,slice)" 
                     :promotion="i.promotion"  
@@ -60,6 +61,16 @@
        
             
         
+=======
+    <div class="w-full h-40 bg-gray-200">
+
+    </div>
+</template> 
+
+<script>
+    export default {
+        name: 'NewProduct'
+>>>>>>> main
     }
 
 </script>
