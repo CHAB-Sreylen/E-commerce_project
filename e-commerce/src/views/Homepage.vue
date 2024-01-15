@@ -1,23 +1,11 @@
 <template>
     <div class="no-scrollbar">
-<<<<<<< HEAD
-      <router-link to="/login">
-            <div class=" w-full h-[40px] flex justify-end items-center "><p class="mr-20 text-[#7E7676]"> Sign in / Register </p></div>
-      </router-link>      
-=======
       <div class=" w-full h-[40px] flex justify-end items-center "><p class="mr-20 text-[#7E7676]"> Sign in / Register </p></div>
->>>>>>> main
       <div class=" w-full flex justify-center items-center border-y border-[#B16969] py-1 "><img class="h-[124px] w-[279px]" src="../assets/envylogo.svg" alt=""></div>
       <Navbar class="sticky top-0 z-50"></Navbar>
       <div class="h-fit w-full flex flex-col gap-[19px]">
         <ShopBox></ShopBox>
         <CollectionBox></CollectionBox>
-<<<<<<< HEAD
-        
-        <!-- tranding box -->
-        <div class="w-full h-fit flex flex-col pl-9 mt-14">
-          <p class="text-[35px]">Tranding Page</p>        
-=======
         <!-- promotion box -->
         <div class="w-full h-fit flex flex-col pl-9 mt-14">
           <p class="text-[35px]">Promotion</p>        
@@ -37,7 +25,6 @@
         <!-- tranding box -->
         <div class="w-full h-fit flex flex-col pl-9 mt-14">
           <p class="text-[35px]">Trending Page</p>        
->>>>>>> main
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll">
             <div class="w-full h-full flex overflow-x-hidden gap-16 " @mousemove="handleMouseMove" ref="scrollContent">
@@ -49,11 +36,7 @@
         <div class="flex flex-col gap-3 items-center">
           <ProductIcon></ProductIcon>
           <ProductList></ProductList>
-<<<<<<< HEAD
-          <RouterView class="mt-4"></RouterView>
-=======
           <RouterView></RouterView>
->>>>>>> main
         </div>
         <HomeView></HomeView>
       </div>
@@ -91,15 +74,10 @@
     import ProductList from '../components/ProductList.vue'
     import TrendingItem from '../components/TrendingItem.vue'
 
-<<<<<<< HEAD
-    import {useImage} from '../stores/images';
-    import {mapState} from 'pinia';
-=======
     import Items from '../components/Items.vue'
     import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
 import { useEStore } from '../stores/eStore'
->>>>>>> main
 
     export default {
       name: "App",
@@ -119,17 +97,11 @@ import { useEStore } from '../stores/eStore'
       RouterLink,
       RouterView,
       TrendingItem,
-<<<<<<< HEAD
-      },
-      computed:{
-            ...mapState(useImage,['Pic']),
-=======
       Items,
       },
       computed:{
             ...mapState(useImage,['Pic']),
             ...mapState(useEStore,['Items']),
->>>>>>> main
       },
       methods:{
         handleMouseDown(e) {
