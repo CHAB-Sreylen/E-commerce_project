@@ -5,11 +5,6 @@
             <p>{{ name }}</p>
             <p>{{ price }}</p>
         </div>
-<<<<<<< HEAD
-        
-
-=======
->>>>>>> main
     </div>
 </template>
 

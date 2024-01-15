@@ -8,8 +8,6 @@ import search from '../assets/search.svg'
 import collection1 from '../assets/collection1.png'
 import collection2 from '../assets/collection2.png'
 
-<<<<<<< HEAD
-=======
 import productTheme from '../assets/ProductTheme.png'
 
 import pdetail1 from '../assets/detail1.png'
@@ -18,18 +16,12 @@ import pdetail3 from '../assets/detail3.png'
 import pdetail4 from '../assets/detail4.png'
 import pdetail5 from '../assets/detail5.png'
 
->>>>>>> main
 export const useEStore = defineStore('todoList', {
     state: () => ({
       NavTitle: [
         {
           title: "HOME",
           link: "/"
-<<<<<<< HEAD
-        },{
-          title: "STORE",
-          link: "/shop"
-=======
         },
         {
           title: "STORE",
@@ -39,7 +31,6 @@ export const useEStore = defineStore('todoList', {
           title:"ABOUT US",
           link:"/about"
 
->>>>>>> main
         }
       ],
       NavIcons: [search,cart,heart],
@@ -58,14 +49,6 @@ export const useEStore = defineStore('todoList', {
         }
       ],
       PCategory: [
-<<<<<<< HEAD
-        "ALL" , "CROWN" , "HAIR PIN" , "HEAD PIECES"
-      ],
-      CList:[
-        {
-          title: "Category",
-          name: ["Crown","Bracelet","Hair Pin","Earing","Rings","Watch","a","b","c"]
-=======
         { 
           name: "ALL",
           link: "/"
@@ -84,7 +67,6 @@ export const useEStore = defineStore('todoList', {
         {
           title: "Category",
           name: ["Ring","Bracelet","Necklace","Earing","a","b","c"]
->>>>>>> main
         },
         {
           title: "Size",
@@ -95,10 +77,6 @@ export const useEStore = defineStore('todoList', {
           name: ["2022","2021"]
         },
 
-<<<<<<< HEAD
-      ]
-
-=======
       ],
       PDT:{
         Page: productTheme,
@@ -170,6 +148,5 @@ export const useEStore = defineStore('todoList', {
       ]
 
 
->>>>>>> main
     }),
 })
