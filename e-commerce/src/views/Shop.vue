@@ -20,11 +20,6 @@
                         <fa icon="chevron-down" class=" text-md"></fa>
                     </div>
                 </div>
-<<<<<<< Updated upstream
-                <!-- items coponent for shop layout column 3 -->
-                <div class="">
-
-=======
                 <!-- items component for shop layout column 3 -->     
                 <div class="AllItems flex flex-wrap justify-between ">
                     <Items  v-for="i in Items"
@@ -34,7 +29,6 @@
                     :discount="i.discount" 
                     :img = "i.img" :name="i.name" 
                     :price="i.price"> </Items>
->>>>>>> Stashed changes
                 </div>
 
 
