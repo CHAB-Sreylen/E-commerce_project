@@ -23,10 +23,7 @@
         <div class="flex flex-col gap-3 items-center">
           <ProductIcon></ProductIcon>
           <ProductList></ProductList>
-<<<<<<< Updated upstream
-=======
           <RouterView class="mt-4"></RouterView>
->>>>>>> Stashed changes
         </div>
         <HomeView></HomeView>
       </div>
