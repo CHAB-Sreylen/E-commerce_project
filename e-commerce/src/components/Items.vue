@@ -8,10 +8,10 @@
                 <div class="mr-3" v-else></div>
             </div>
             <div class="w-full flex absolute top-3 justify-center ">
-                <img class="Img w-[300px] h-[350px] " :src="img"  alt="" />
+                <img class="Img w-[300px] h-[350px]" :src="img"  alt="" />
             </div>
         </div>
-        <p class="name font-[400] text-[20px] ml-3 mt-4">{{ name }}</p>
+        <p class="name font-[400] text-[16px] ml-3 mt-4">{{ name }}</p>
        <div class="flex flex-row">
            <div class="" v-if="promotion == true">
                 <p class="price font-[400] text-[14px] ml-3 mt-4 line-through">{{ baseprice }}</p>

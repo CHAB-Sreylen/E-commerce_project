@@ -23,22 +23,24 @@
           </div>
         </div>
         <!-- tranding box -->
-        <div class="w-full h-fit flex flex-col pl-9 mt-14">
+        <div class="w-full h-fit flex flex-col pl-9 ">
           <p class="text-[35px]">Trending Page</p>        
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll">
             <div class="w-full h-full flex overflow-x-hidden gap-14 " @mousemove="handleMouseMove" ref="scrollContent">
               <!-- <TrendingItem v-for="item in Pic" :image="item.image" :name="item.name" :price="item.price" class="focus:bg-green-300"></TrendingItem> -->
-              <div v-for="i in Items" class="h-fit w-fit">
-                <Items v-if="i.tranding== true"
+              
+                <Items v-for="i in TrandingItem"
                     :promotion="i.promotion"  
                     :baseprice="i.baseprice"
                     :DiscountBox="i.DiscountBox" 
                     :discount="i.discount" 
                     :img = "i.img" :name="i.name" 
-                    :price="i.price"> </Items>
-              </div>
+                    :price="i.price"></Items>
+
             </div>
+           
+            
           </div>
         </div>
         <!-- product item -->
@@ -46,15 +48,6 @@
           <ProductIcon></ProductIcon>
           <ProductList></ProductList>
           <RouterView>
-            <div class="AllItems flex flex-wrap justify-between">
-                    <Items v-for="i in Items"
-                    :promotion="i.promotion"  
-                    :baseprice="i.baseprice"
-                    :DiscountBox="i.DiscountBox" 
-                    :discount="i.discount" 
-                    :img = "i.img" :name="i.name" 
-                    :price="i.price"></Items>
-                </div>
           </RouterView>
         </div>
         <HomeView></HomeView>
@@ -102,11 +95,15 @@
     export default {
       name: "App",
       data() {
-    return {
-      isMouseDown: false,
-      startX: 0,
-      scrollLeft: 0,
+      return {
+        isMouseDown: false,
+        startX: 0,
+        scrollLeft: 0,
+        TrandingItem : [],
       };
+    },
+    mounted(){
+      this.TrandingItem = this.Items.filter(Items => Items.tranding)
     },
     components: {
       Navbar,
@@ -122,6 +119,7 @@
       computed:{
             ...mapState(useImage,['Pic']),
             ...mapState(useEStore,['Items']),
+
       },
       methods:{
         handleMouseDown(e) {

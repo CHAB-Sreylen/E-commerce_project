@@ -13,6 +13,10 @@ const router = createRouter({
           path: '',
           component: () => import('../views/NewProduct.vue')
         },
+        {
+          path: '/working',
+          component: () => import('../views/Working.vue')
+        },
       ] 
     },
     {
