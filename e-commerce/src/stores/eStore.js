@@ -108,7 +108,7 @@ export const useEStore = defineStore('todoList', {
         { 
           DiscountBox:true,
           discount:"-25%",
-          img:"./src/assets/pic11.png",
+          img:"./src/assets/pic12.png",
           name:"Royal Chain Ring",
           promotion:true,
           baseprice:"30$",
