@@ -11,7 +11,7 @@
           <p class="text-[35px]">Promotion</p>        
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="PhandleMouseDown" @mouseleave="PhandleMouseLeave" @mouseup="PhandleMouseUp" ref="promotionScroll" >
-            <div class="w-full h-full flex overflow-x-hidden gap-5 " @mousemove="PhandleMouseMove" ref="promotionScrollContent">
+            <div class="w-full h-full flex overflow-x-hidden gap-14 " @mousemove="PhandleMouseMove" ref="promotionScrollContent">
                     <Items v-for="i in Items"
                     :promotion="i.promotion"  
                     :baseprice="i.baseprice"
@@ -27,9 +27,17 @@
           <p class="text-[35px]">Trending Page</p>        
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll">
-            <div class="w-full h-full flex overflow-x-hidden gap-16 " @mousemove="handleMouseMove" ref="scrollContent">
-              <TrendingItem v-for="item in Pic" :image="item.image" :name="item.name" :price="item.price" class="focus:bg-green-300"></TrendingItem>
-              
+            <div class="w-full h-full flex overflow-x-hidden gap-14 " @mousemove="handleMouseMove" ref="scrollContent">
+              <!-- <TrendingItem v-for="item in Pic" :image="item.image" :name="item.name" :price="item.price" class="focus:bg-green-300"></TrendingItem> -->
+              <div v-for="i in Items" class="h-fit w-fit">
+                <Items v-if="i.tranding== true"
+                    :promotion="i.promotion"  
+                    :baseprice="i.baseprice"
+                    :DiscountBox="i.DiscountBox" 
+                    :discount="i.discount" 
+                    :img = "i.img" :name="i.name" 
+                    :price="i.price"> </Items>
+              </div>
             </div>
           </div>
         </div>
@@ -45,7 +53,7 @@
                     :DiscountBox="i.DiscountBox" 
                     :discount="i.discount" 
                     :img = "i.img" :name="i.name" 
-                    :price="i.price"> </Items>
+                    :price="i.price"></Items>
                 </div>
           </RouterView>
         </div>
@@ -100,7 +108,7 @@
       scrollLeft: 0,
       };
     },
-      components: {
+    components: {
       Navbar,
       ShopBox,
       CollectionBox,
