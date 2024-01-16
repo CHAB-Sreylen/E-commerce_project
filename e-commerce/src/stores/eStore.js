@@ -56,7 +56,15 @@ export const useEStore = defineStore('todoList', {
         , 
         {
           name: "CROWN",
-          link: "/skdfadsj"
+          link: "/working"
+        },
+        {
+          name: "NECKLACE",
+          link: "/working"
+        },
+        {
+          name: "RINGS",
+          link: "/working"
         }
       ],
       CList:[

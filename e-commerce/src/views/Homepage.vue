@@ -23,7 +23,7 @@
           </div>
         </div>
         <!-- tranding box -->
-        <div class="w-full h-fit flex flex-col pl-9 mt-14">
+        <div class="w-full h-fit flex flex-col pl-9 ">
           <p class="text-[35px]">Trending Page</p>        
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll">
