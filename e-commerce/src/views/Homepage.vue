@@ -37,7 +37,17 @@
         <div class="flex flex-col gap-3 items-center">
           <ProductIcon></ProductIcon>
           <ProductList></ProductList>
-          <RouterView></RouterView>
+          <RouterView>
+            <div class="AllItems flex flex-wrap justify-between">
+                    <Items v-for="i in Items"
+                    :promotion="i.promotion"  
+                    :baseprice="i.baseprice"
+                    :DiscountBox="i.DiscountBox" 
+                    :discount="i.discount" 
+                    :img = "i.img" :name="i.name" 
+                    :price="i.price"> </Items>
+                </div>
+          </RouterView>
         </div>
         <HomeView></HomeView>
       </div>
@@ -65,7 +75,7 @@
     
   </style>
    
-  <script>
+  <script >
     import { RouterLink, RouterView } from 'vue-router'
     // import HelloWorld from './components/HelloWorld.vue'
     import Navbar from '../components/Navbar.vue' 
@@ -78,7 +88,8 @@
     import Items from '../components/Items.vue'
     import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
-import { useEStore } from '../stores/eStore'
+    import { useEStore } from '../stores/eStore'
+    import { reactive } from 'vue'
 
     export default {
       name: "App",
@@ -148,10 +159,9 @@ import { useEStore } from '../stores/eStore'
             const walk = (x - this.startX) * 2;
             this.$refs.promotionScrollContent.scrollLeft = this.scrollLeft - walk; // or this.$refs.trendingScrollContent.scrollLeft
           }
-
-
-      }
+        },
      }
+     
  
   </script>
   
