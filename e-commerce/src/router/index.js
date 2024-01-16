@@ -52,7 +52,12 @@ const router = createRouter({
       path: '/dashboard', 
       name : 'dashboard',
       component: () => import('../components/pages/DashboardPage.vue') 
-     }
+     },
+     { 
+      path: '/register1', 
+      name : 'register1',
+      component: () => import('../components/pages/Register.vue') 
+     },
   ]
 })
 
