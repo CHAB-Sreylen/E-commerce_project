@@ -1,6 +1,8 @@
 <template>
-    <div class="flex flex-row h-[50px] items-center justify-between px-[35px] bg-white">
-        <div class="flex gap-[35px]"> 
+   
+   <div class="flex flex-row h-[50px] items-center justify-between px-[35px] bg-white">
+   
+    <div class="flex gap-[35px]"> 
             <div class="text-md font-semibold flex gap-1 justify-center text-[#7E7676]" v-for="t in NavTitle">
                 <h1 class=" hover:text-[#B16969] text-[#B16969] " v-if="$route.path === t.link"><RouterLink :to="t.link">{{t.title}}</RouterLink></h1>
                 <h1 class=" hover:text-[#B16969] " v-if="$route.path !== t.link"><RouterLink :to="t.link">{{t.title}}</RouterLink></h1>

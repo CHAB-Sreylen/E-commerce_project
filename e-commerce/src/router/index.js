@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import homepage from '../views/Homepage.vue'
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -39,6 +38,21 @@ const router = createRouter({
   
       component: () => import('../views/ProductDetail.vue')
     },
+    { 
+      path: '/login', 
+      name : 'Login',
+      component: () => import('../components/pages/LoginPage.vue') 
+    },
+    { 
+      path: '/register',
+      name : 'Register', 
+      component: () => import('../components/pages/RegisterPage.vue') 
+    },
+    { 
+      path: '/dashboard', 
+      name : 'dashboard',
+      component: () => import('../components/pages/DashboardPage.vue') 
+     }
   ]
 })
 
