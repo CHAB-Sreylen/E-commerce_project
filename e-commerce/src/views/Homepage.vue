@@ -10,8 +10,8 @@
         <div class="w-full h-fit flex flex-col pl-9 mt-14">
           <p class="text-[35px]">Promotion</p>        
           <p class="text-[15px]">Most Popular Item</p>
-          <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll" >
-            <div class="w-full h-full flex overflow-x-hidden gap-5 " @mousemove="handleMouseMove" ref="scrollContent">
+          <div class="flex w-full h-fit mt-4" @mousedown="PhandleMouseDown" @mouseleave="PhandleMouseLeave" @mouseup="PhandleMouseUp" ref="promotionScroll" >
+            <div class="w-full h-full flex overflow-x-hidden gap-5 " @mousemove="PhandleMouseMove" ref="promotionScrollContent">
                     <Items v-for="i in Items"
                     :promotion="i.promotion"  
                     :baseprice="i.baseprice"
@@ -29,6 +29,7 @@
           <div class="flex w-full h-fit mt-4" @mousedown="handleMouseDown" @mouseleave="handleMouseLeave" @mouseup="handleMouseUp" ref="scroll">
             <div class="w-full h-full flex overflow-x-hidden gap-16 " @mousemove="handleMouseMove" ref="scrollContent">
               <TrendingItem v-for="item in Pic" :image="item.image" :name="item.name" :price="item.price" class="focus:bg-green-300"></TrendingItem>
+              
             </div>
           </div>
         </div>
@@ -128,7 +129,27 @@ import { useEStore } from '../stores/eStore'
           // } else if (walk > 0) {
           //   console.log('Scrolling to the right');
           // }
+          },
+          PhandleMouseDown(e) {
+            this.isMouseDown = true;
+            this.startX = e.pageX - this.$refs.promotionScroll.offsetLeft; // or this.$refs.trendingScroll.offsetLeft
+            this.scrollLeft = this.$refs.promotionScrollContent.scrollLeft; // or this.$refs.trendingScrollContent.scrollLeft
+          },
+          PhandleMouseLeave() {
+            this.isMouseDown = false;
+          },
+          PhandleMouseUp() {
+            this.isMouseDown = false;
+          },
+          PhandleMouseMove(e) {
+            if (!this.isMouseDown) return;
+            e.preventDefault();
+            const x = e.pageX - this.$refs.promotionScroll.offsetLeft; // or this.$refs.trendingScroll.offsetLeft
+            const walk = (x - this.startX) * 2;
+            this.$refs.promotionScrollContent.scrollLeft = this.scrollLeft - walk; // or this.$refs.trendingScrollContent.scrollLeft
           }
+
+
       }
      }
  
