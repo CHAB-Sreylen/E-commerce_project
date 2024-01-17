@@ -47,8 +47,7 @@
         <div class="flex flex-col gap-3 items-center">
           <ProductIcon></ProductIcon>
           <ProductList></ProductList>
-          <RouterView>
-          </RouterView>
+          <RouterView></RouterView>
         </div>
         <HomeView></HomeView>
       </div>
