@@ -23,10 +23,10 @@
                     </div>
                     <div class="flex justify-between pt-2">
                         <p>Total</p>
-                        <p>90$</p>
+                        <p>90$+</p>
                     </div>
                     <div class="flex justify-center items-center bg-[#E0B0B0] text-white h-[50px] mt-2">
-                        view cart
+                        <RouterLink to="/cart">view cart</RouterLink>
                     </div>
                     <div class="flex justify-center items-center border border-[#E0B0B0]  h-[50px] mt-2">
                         Check out
@@ -44,15 +44,20 @@
     import {useEStore} from '../stores/eStore';
     import {mapState} from 'pinia';
     import { useCart } from '../stores/Cart';
+    import { RouterLink } from 'vue-router';
 
-    import { RouterLink, RouterView } from 'vue-router'
+    
+   
     import CardProduct from './CardProduct.vue';
+
+
 
     export default {
         name: "Navbar",
         data(){
             return {
                 click: false,
+                totalPrice:"",
             }
         },
         computed: {
@@ -61,7 +66,8 @@
             ...mapState(useCart,['cart']),
             shouldShowCart() {
                 return this.NavIcons.some(icon => icon.name === 'cart') && this.click;
-            }
+            },
+           
         },
         components: {
             RouterLink,

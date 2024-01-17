@@ -18,7 +18,6 @@
 
 <script>
 
-   import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
 
     import {useCart} from '../stores/Cart'; 
@@ -58,7 +57,7 @@
                 console.log("click")
                 console.log(this.cart)
         }
-      }
+        }
         
     }
 </script>

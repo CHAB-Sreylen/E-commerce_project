@@ -9,6 +9,7 @@ export const useCart = defineStore('carts', {
         
         cart: [],
     }),
+    
     actions: {
         addToCart(name,price,img) {
             
@@ -20,6 +21,9 @@ export const useCart = defineStore('carts', {
             else{
                 this.cart.push({name,price,img , quantity: 1})
             }
-        }
+        },
+        deleteCart(name, price) {
+            this.cart = this.cart.filter(item => !(item.name === name && item.price === price));
+        },
     }
 })
