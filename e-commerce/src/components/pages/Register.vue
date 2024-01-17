@@ -1,75 +1,59 @@
 <template>
+  <div class="card">
+    <div class="card-header">Register Form</div>
+    <div class="card-body">
+      <form @submit.prevent="handleRegister">
+        <label>First Name</label>
+        <input type="text" v-model="form.name" name="name" id="name" class="form-control" required />
 
-    <div class="card">
-            <div class="card-header">Register Form</div>
-            <div class="card-body"> 
-            
-                <form  @submit.prevent="saveData">
-                
-                <label>First Name</label>
-                <input type="text" v-model="student.name" name="name" id="name" class ="form-control"/> 
-    
-          
-                <label>Email</label>
-                <input type="email" v-model="student.email" name="email" id="email" class ="form-control"/>
-    
-                <label>Password</label>
-                <input type="password" v-model="student.password" name="password" id="password" class ="form-control"/> 
+        <label>Email</label>
+        <input type="email" v-model="form.email" name="email" id="email" class="form-control" required />
 
-                <label>Confirm Password</label>
-                <input type="password" v-model="student.password" name="password" id="password" class ="form-control"/> 
-    
-    
-                <input type="submit" value="Save" class="btn btn-success"> 
-    
-    
-                </form>
-            </div>
-        </div>
-    </template>
-       
-       <script>
-        
-        import axios from 'axios';
+        <label>Password</label>
+        <input type="password" v-model="form.password" name="password" id="password" class="form-control" required />
 
+        <label>Confirm Password</label>
+        <input type="password" v-model="form.password_confirmation" name="password_confirmation" id="password_confirmation" class="form-control" required />
 
-         export default {
-           name: 'Register',
-           data () {
-             return {
-               result: {},
-               student:{
-                          name: '',
-                          email: '',
-                          password: '',
-                          confirmPassword: ''
-               }
-             }
-           },
-           created() { 
-           },
-           mounted() {
-                 console.log("mounted() called.......");
-             },
-           methods: {
-                  saveData()
-                  {
-                   axios.post("http://127.0.0.1/api/register", this.student)
-                   .then(
-                     ({data})=>{
-                      console.log(data);
-                       try 
-                         {
-                            alert("saveddddd");
-                            
-                          } 
-                      catch(err) 
-                          {
-                            alert("failed");
-                          }    
-                     }
-                   )
-                  }
-             }
-         }
-         </script>
+        <button type="submit" :disabled="loading" class="btn btn-success">
+          {{ loading ? 'Loading...' : 'Save' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import axios from "axios";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const form = ref({
+  name: "",
+  password: "",
+  email: "",
+  password_confirmation: "",
+});
+
+const loading = ref(false);
+
+const handleRegister = async () => {
+  try {
+    loading.value = true;
+    await axios.post("http://127.0.0.1/register", {
+      name: form.value.name,
+      password: form.value.password,
+      email: form.value.email,
+      password_confirmation: form.value.password_confirmation,
+    });
+    router.push("/");
+  } catch (error) {
+    // Handle error (show a message, log it, etc.)
+    console.error("Registration failed:", error);
+  } finally {
+    loading.value = false;
+  }
+};
+</script>

@@ -139,7 +139,7 @@ import Navbar from '../Navbar.vue';
              password: this.password,
              password_confirmation: this.confirmPassword
          }
-         axios.post('/api/register', payload)
+         axios.post('http://127.0.0.1/register', payload)
            .then(response => {
              localStorage.setItem('token', response.data.token)
              this.$router.push('/dashboard')
