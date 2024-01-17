@@ -55,21 +55,12 @@
                                  </div>
                              </div>
                              <div class="mb-3">
-                                 <label 
-                                     htmlFor="password"
-                                     class="form-label">Password
-                                 </label>
-                                 <input 
-                                     type="password"
-                                     class="form-control"
-                                     id="password"
-                                     name="password"
+                                 <label htmlFor="password" class="form-label">Password</label>
+                                 <input type="password" class="form-control" id="password" name="password"
                                      v-model="password"
                                  />
-                                <div v-if="validationErrors.password" class="flex flex-col">
-                                     <small  class="text-danger">
-                                     {{validationErrors?.password[0]}}
-                                     </small >
+                                <div v-if="validationErrors.password" class="flex flex-col"> 
+                                    <small  class="text-danger">{{validationErrors?.password[0]}}</small >
                                  </div>
                              </div>
                              <div class="mb-3">
@@ -127,7 +118,7 @@ import Navbar from '../Navbar.vue';
    },
    created() {
      if(localStorage.getItem('token') != "" && localStorage.getItem('token') != null){
-         this.$router.push('/dashboard')
+         this.$router.push('/Register')
      }
    },
    methods: {
@@ -139,7 +130,7 @@ import Navbar from '../Navbar.vue';
              password: this.password,
              password_confirmation: this.confirmPassword
          }
-         axios.post('http://127.0.0.1/register', payload)
+         axios.post('http://127.0.0.1/api/register', payload)
            .then(response => {
              localStorage.setItem('token', response.data.token)
              this.$router.push('/dashboard')

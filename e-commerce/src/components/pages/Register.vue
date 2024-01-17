@@ -42,7 +42,7 @@ const loading = ref(false);
 const handleRegister = async () => {
   try {
     loading.value = true;
-    await axios.post("http://127.0.0.1/register", {
+    await axios.post("http://127.0.0.1/api/register", {
       name: form.value.name,
       password: form.value.password,
       email: form.value.email,

@@ -8,7 +8,7 @@
                      <div class="d-flex">
                          <ul class="navbar-nav">
                              <li class="nav-item">
-                                 <a @click="logoutAction()" class="nav-link " aria-current="page" href="#">Logout</a>
+                                 <a class="nav-link " aria-current="page" href="/">Logout</a>
                              </li>
                          </ul>
                      </div>
@@ -45,7 +45,7 @@
    },
    methods: {
      getUser() {
-         axios.get('/api/user', { headers:{Authorization: 'Bearer ' + localStorage.getItem('token')}})
+         axios.get('http://127.0.0.1/api/register', { headers:{Authorization: 'Bearer ' + localStorage.getItem('token')}})
          .then((r) => {
             this.user = r.data;
             return r
@@ -55,17 +55,25 @@
          });
      },
   
-     logoutAction () {
-       axios.post('/api/logout',{}, { headers:{Authorization: 'Bearer ' + localStorage.getItem('token')}})
-       .then((r) => {
-           localStorage.setItem('token', "")
-           this.$router.push('/')
-           return r
-       })
-       .catch((e) => {
-         return e
-       });
-     }
+     logoutAction() {
+        const token = localStorage.getItem('token');
+
+        // Check if there is a token
+        if (!token) {
+          console.warn('No token found. The user is likely not authenticated.');
+          // You might choose to handle this case differently, or simply do nothing.
+          return;
+        }
+
+        axios.post('http://127.0.0.1/api/logout', {}, { headers: { Authorization: 'Bearer ' + token } })
+          .then((response) => {
+            localStorage.setItem('token', '');
+            this.$router.push('/');
+          })
+          .catch((error) => {
+            console.error('Error during logout:', error);
+          });
+      }
   
    },
  };

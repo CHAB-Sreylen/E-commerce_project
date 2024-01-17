@@ -87,7 +87,7 @@ import Navbar from '../Navbar.vue';
    },
    created() {
      if(localStorage.getItem('token') != "" && localStorage.getItem('token') != null){
-         this.$router.push('/dashboard')
+         this.$router.push('/Login')
      }
    },
    methods: {
@@ -97,7 +97,7 @@ import Navbar from '../Navbar.vue';
              email: this.email,
              password: this.password,
          }
-         axios.post('/api/login', payload)
+         axios.post('http://127.0.0.1/api/login', payload)
            .then(response => {
              localStorage.setItem('token', response.data.token)
              this.$router.push('/dashboard')
