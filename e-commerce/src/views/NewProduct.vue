@@ -1,6 +1,6 @@
 <template>
     <div class="w-full h-fit mt-5 flex flex-col items-center">
-        <div class=" flex flex-wrap justify-start gap-12 px-10">
+        <div class=" flex flex-wrap justify-start gap-24 px-10">
                     <NewItem v-for="i in Items.slice(0,number)"
                     :promotion="i.promotion"  
                     :baseprice="i.baseprice"
