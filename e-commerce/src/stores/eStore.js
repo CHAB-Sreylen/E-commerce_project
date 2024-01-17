@@ -33,7 +33,20 @@ export const useEStore = defineStore('todoList', {
 
         }
       ],
-      NavIcons: [search,cart,heart],
+      NavIcons: [
+        { 
+          name: "search",
+          img: search
+        },
+        { 
+          name: "cart",
+          img: cart
+        },
+        { 
+          name: "heart",
+          img: heart
+        },
+        ],
 
       Cbox:[
         {
