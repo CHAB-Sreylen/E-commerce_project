@@ -16,6 +16,24 @@ import pdetail3 from '../assets/detail3.png'
 import pdetail4 from '../assets/detail4.png'
 import pdetail5 from '../assets/detail5.png'
 
+import pic1 from '../assets/HeartBracelet.png';
+import pic2 from '../assets/pic10.png'
+import pic3 from '../assets/pic12.png'
+import pic4 from '../assets/HeartNecklace.png'
+import pic5 from '../assets/PlumeRing.png'
+import pic6 from '../assets/DaintyBowNecklace.png'
+import pic7 from '../assets/pic4.png'
+import pic8 from '../assets/pic5.png'
+import pic9 from '../assets/pic6.png'
+import pic10 from '../assets/pic7.png'
+import pic11 from '../assets/pic8.png'
+import pic12 from '../assets/pic8.png'
+
+import Tpic1 from '../assets/Latest.jpg'
+import Tpic2 from '../assets/LatestProduct.jpg'
+import Tpic3 from '../assets/packaging.jpg'
+
+
 export const useEStore = defineStore('todoList', {
     state: () => ({
       NavTitle: [
@@ -110,17 +128,17 @@ export const useEStore = defineStore('todoList', {
       ],
       Trending:[
         {
-          Img:"./src/assets/Latest.jpg",
+          Img:Tpic1,
           Title:"Latest product",
           Detail:"Our design follow the latest  styles to help you update",
         },
         {
-          Img:"./src/assets/LatestProduct.jpg",
+          Img: Tpic2,
           Title:"Best price",
           Detail:"Our design follow the latest  styles to help you update",
         },
         {
-          Img:"./src/assets/packaging.jpg",
+          Img: Tpic3,
           Title:"Free shipping ",
           Detail:"Our design follow the latest  styles to help you update",
         }
@@ -133,7 +151,7 @@ export const useEStore = defineStore('todoList', {
         { 
           DiscountBox:true,
           discount:"-80%",
-          img:"./src/assets/HeartBracelet.png",
+          img:pic1,
           name:"Heart Bracelet",
           promotion:true,
           baseprice:"100$",
@@ -145,7 +163,7 @@ export const useEStore = defineStore('todoList', {
         { 
           DiscountBox:true,
           discount:"-20%",
-          img:"./src/assets/pic10.png",
+          img: pic2,
           name:"Yellow Gold Plume Play Ring",
           promotion:true,
           baseprice:"100$",
@@ -157,7 +175,7 @@ export const useEStore = defineStore('todoList', {
         { 
           DiscountBox:true,
           discount:"-25%",
-          img:"./src/assets/pic12.png",
+          img: pic3,
           name:"Royal Chain Ring",
           promotion:true,
           baseprice:"30$",
@@ -169,7 +187,7 @@ export const useEStore = defineStore('todoList', {
         { 
           DiscountBox:true,
           discount:"-75%",
-          img:"./src/assets/HeartNecklace.png",
+          img:pic4,
           name:"Heart Necklace",
           promotion:true,
           price:"50",
@@ -178,7 +196,7 @@ export const useEStore = defineStore('todoList', {
         {
           DiscountBox:true,
           discount:"-50%",
-          img:"./src/assets/PlumeRing.png",
+          img:pic5,
           name:"Plume Ring",
           price:"20",
           category: "ring",
@@ -187,7 +205,7 @@ export const useEStore = defineStore('todoList', {
           DiscountBox:true,
           promotion: true,
           discount: "-50%",
-          img:"./src/assets/DaintyBowNecklace.png",
+          img:pic6,
           name:"Dainty Bow Necklace",
           baseprice:"100$",
           price:"50",
@@ -195,21 +213,21 @@ export const useEStore = defineStore('todoList', {
         },
         {
           DiscountBox:false,
-          img:"./src/assets/pic4.png",
+          img:pic7,
           name:"Encircrle Pendant Necklace",
           price:"20",
           category: "necklace"
         },
         {
           DiscountBox:false,
-          img:"./src/assets/pic5.png",
+          img:pic8,
           name: "Dandieline Hairpin",
           price:"30",
           tranding: true,
         },
         {
           DiscountBox:false,
-          img:"./src/assets/pic6.png",
+          img:pic9,
           name:"Gold Cuff Brancelet",
           price:"30",
           tranding: true,
@@ -217,21 +235,21 @@ export const useEStore = defineStore('todoList', {
         },
         {
           DiscountBox:false,
-          img:"./src/assets/pic7.png",
+          img:pic10,
           name:"Hoop Earring",
           price:"30",
           category: "earring"
         },
         {
           DiscountBox:false,
-          img:"./src/assets/pic8.png",
+          img:pic11,
           name:"Hoop earring with pearl",
           price:"30",
           category: "earring"
         },
         {
           DiscountBox:false,
-          img:"./src/assets/pic9.png",
+          img: pic12,
           name:"Metal Geometric Hoop earing",
           price:"30",
           tranding: true,
