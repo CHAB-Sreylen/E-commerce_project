@@ -43,6 +43,22 @@ const router = createRouter({
           path: '/ring',
           component: () => import('../views/RingPage.vue')
         },
+        {
+          path: '/bracelet',
+          component: () => import('../views/BraceletPage.vue')
+        },
+        {
+          path: '/necklace',
+          component: () => import('../views/NecklacePage.vue')
+        },
+        {
+          path: '/earring',
+          component: () => import('../views/EarringPage.vue')
+        },
+        {
+          path: '/promotion',
+          component: () => import('../views/PromotionPage.vue')
+        },
       ] 
     },
     {

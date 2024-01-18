@@ -81,14 +81,14 @@ export const useEStore = defineStore('todoList', {
         }
       ],
       CList:[
-        // {
-        //   title:"Promotion",
-        //   name: ["Ring","Bracelet","Necklace","Earing","a","b","c"],
-        //   link: "/shop/",
-        // },
+        {
+          title:"Promotion",
+          name: [{n: "Ring", path: "/promotion"},{n: "branclat", path: "/promotion"},{n: "Necklace", path: "/promotion"},{n: "Earring", path: "/promotion"}],
+          link: "/promotion",
+        },
         {
           title:"Category",
-          name: [{n: "Ring", path: "/ring"},{n: "branclate", path: "/shop/brance"},{n: "Necklace", path: "/shop/necklace"},{n: "Earring", path: "/shop/earring"}],
+          name: [{n: "Ring", path: "/ring"},{n: "branclat", path: "/bracelet"},{n: "Necklace", path: "/necklace"},{n: "Earring", path: "/earring"}],
           link: "/shop",
         },
         // {
@@ -96,14 +96,16 @@ export const useEStore = defineStore('todoList', {
         //   Items: [{name: "RING", path: "/ring"},{name: "BRANCLET", path: "/branclate"},{name: "NECKLACE", path: "/necklace"},{name: "EARRING", path: "/earring"}],
         //   link: "/"
         // },
-        // {
-        //   title: "Size",
-        //   name: ["Extra Large","Large","Medium","Small","Extra small"]
-        // },
-        // {
-        //   title: "Collection",
-        //   name: ["2022","2021"]
-        // },
+        {
+          title: "Size",
+          name: [{n: "Extra Large", path: "/shop"},{n: "Large", path: "/shop"},{n: "Medium", path: "/shop"},{n: "Small", path: "/shop"},{n: "Extra small", path: "/shop"}],
+          link: "/shop"
+        },
+        {
+          title: "Collection",
+          name: [{n: "2021", path: "/shop"},{n: "2022", path: "/shop"}],
+          link: "/shop"
+        },
 
       ],
       PDT:{
@@ -118,9 +120,10 @@ export const useEStore = defineStore('todoList', {
           name:"Heart Bracelet",
           promotion:true,
           baseprice:"100$",
-          price:"50$",
+          price:"50",
           tranding: true,
           new: true,
+          category: "bracelet",
         },
         { 
           DiscountBox:true,
@@ -129,7 +132,7 @@ export const useEStore = defineStore('todoList', {
           name:"Yellow Gold Plume Play Ring",
           promotion:true,
           baseprice:"100$",
-          price:"70$",
+          price:"70",
           tranding: true,
           new: true,
           category: "ring",
@@ -141,7 +144,7 @@ export const useEStore = defineStore('todoList', {
           name:"Royal Chain Ring",
           promotion:true,
           baseprice:"30$",
-          price:"22.5$",
+          price:"22.5",
           tranding: true,
           new: true,
           category: "ring"
@@ -152,14 +155,15 @@ export const useEStore = defineStore('todoList', {
           img:"./src/assets/HeartNecklace.png",
           name:"Heart Necklace",
           promotion:true,
-          price:"50$",
+          price:"50",
+          category: "necklace"
         },
         {
           DiscountBox:true,
           discount:"-50%",
           img:"./src/assets/PlumeRing.png",
           name:"Plume Ring",
-          price:"20$",
+          price:"20",
           category: "ring",
         },
         {
@@ -169,46 +173,52 @@ export const useEStore = defineStore('todoList', {
           img:"./src/assets/DaintyBowNecklace.png",
           name:"Dainty Bow Necklace",
           baseprice:"100$",
-          price:"50$",
+          price:"50",
+          category: "necklace"
         },
         {
           DiscountBox:false,
           img:"./src/assets/pic4.png",
           name:"Encircrle Pendant Necklace",
-          price:"20$",
+          price:"20",
+          category: "necklace"
         },
         {
           DiscountBox:false,
           img:"./src/assets/pic5.png",
           name: "Dandieline Hairpin",
-          price:"30$",
+          price:"30",
           tranding: true,
         },
         {
           DiscountBox:false,
           img:"./src/assets/pic6.png",
           name:"Gold Cuff Brancelet",
-          price:"30$",
+          price:"30",
           tranding: true,
+          category: "bracelet",
         },
         {
           DiscountBox:false,
           img:"./src/assets/pic7.png",
           name:"Hoop Earring",
-          price:"30$",
+          price:"30",
+          category: "earring"
         },
         {
           DiscountBox:false,
           img:"./src/assets/pic8.png",
           name:"Hoop earring with pearl",
-          price:"30$",
+          price:"30",
+          category: "earring"
         },
         {
           DiscountBox:false,
           img:"./src/assets/pic9.png",
           name:"Metal Geometric Hoop earing",
-          price:"30$",
+          price:"30",
           tranding: true,
+          category: "earring"
         },
       
       ]

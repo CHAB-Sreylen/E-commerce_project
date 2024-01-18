@@ -5,11 +5,14 @@ import { defineStore  } from 'pinia'
 
 
 export const useCart = defineStore('carts', {
-    state: () => ({
-        
+    state: () => ({ 
         cart: [],
     }),
-    
+    getters: {
+        getTotalPrice() {
+        return this.cart.reduce((total, item) => total + parseFloat(item.price) * parseInt(item.quantity, 10), 0);
+        },
+    },
     actions: {
         addToCart(name,price,img) {
             

@@ -41,6 +41,7 @@
     import {useEStore} from '../stores/eStore';
     import {mapState} from 'pinia';
     import { RouterView } from 'vue-router';
+    import { RouterLink } from 'vue-router';
 
     import Navbar from '../components/Navbar.vue';
     import Searchbar from '../components/Searchbar.vue';
@@ -53,7 +54,8 @@
             Searchbar,
             List,
             Items,
-            RouterView
+            RouterView,
+            RouterLink
         },
         computed:{
             ...mapState(useEStore,['CList']),

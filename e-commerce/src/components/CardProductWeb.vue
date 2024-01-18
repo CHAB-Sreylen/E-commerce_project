@@ -5,9 +5,9 @@
             <img :src="img" alt="" class="w-[122px] h-[144px] bg-[#FFF2F2]" >   
             <p class="text-[16px]">{{ name }}</p>
         </div>
-        <p class="text-[16px] pl-2 w-[172px] flex">{{ price }}</p>
+        <p class="text-[16px] pl-2 w-[172px] flex">${{ price }}</p>
         <p class="text-[16px] pl-10 w-[468px]">Quantity: {{ quantity }}</p>
-        <p class="pl-3 w-[150px] ">90$</p>
+        <p class="pl-1 w-[150px] ">${{ subtotal }}</p>
     </div>
     
 </template>
@@ -26,6 +26,9 @@
         },
         computed: {
             ...mapState(useCart,['cart']),
+            subtotal(){
+                return (parseFloat(this.price) * parseInt(this.quantity)).toFixed(2)
+            }
         },
         methods: {
             deleteCart(){

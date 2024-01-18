@@ -16,7 +16,7 @@
             </div>
             <div class="flex justify-between pt-2 border-t border-[#E0B0B0] px-24">
                 <p class=" text-[20px] pr-10 font-medium">total</p>
-                <p class="pr-4">90$</p>
+                <p class="pl-6">${{ $store.getTotalPrice.toFixed(2) }}</p>
             </div>
             <div class="w-full h-fit">
                 <div class="flex justify-center items-center border text-white bg-[#E0B0B0] w-[400px]  h-[50px] mt-2">
@@ -39,12 +39,19 @@
 
     export default{
         name: "Cart",
+        setup(){
+            const $store = useCart();
+            return {
+                $store
+            }
+        },
         components: {
             Navbar,
             CardProductWeb,
         },computed:{
             ...mapState(useCart,['cart']),
-        }
+        },
+        
     }
 
 </script>

@@ -23,7 +23,7 @@
                     </div>
                     <div class="flex justify-between pt-2">
                         <p>Total</p>
-                        <p>90$</p>
+                        <p>${{  $store.getTotalPrice.toFixed(2)  }}</p>
                     </div>
                     <div class="flex justify-center items-center bg-[#E0B0B0] text-white h-[50px] mt-2">
                         <RouterLink to="/cart">view cart</RouterLink>
@@ -60,6 +60,12 @@
                 totalPrice:"",
             }
         },
+        setup(){
+            const $store = useCart();
+            return{
+                $store,
+            }
+        },  
         computed: {
             ...mapState(useEStore,['NavTitle']),
             ...mapState(useEStore,['NavIcons']),

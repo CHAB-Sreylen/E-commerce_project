@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col mb-10 " @mouseenter="showChildren" @mouseleave="hideChildren">
+    <div class="flex flex-col mb-10 " @mouseenter="showChildren" @mouseleave="hideChildren" @click="goToAnotherRoute('/ProductDetail')" >
         <div class="min-w-[255px] min-h-[350px] bg-[#FFF2F2] flex flex-col relative">
 
             <div class="flex justify-end">
@@ -21,7 +21,7 @@
            </div>
            <div class="" v-else></div>
            <div>
-                <p class="price font-[400] text-[14px] ml-2 mt-4">{{ price }}</p>
+                <p class="price font-[400] text-[14px] ml-2 mt-4">{{ price }}$</p>
            </div>
        </div>
     </div>
@@ -67,8 +67,13 @@ export default{
                 : 'Item was already in the cart.');
                 console.log("click")
                 console.log(this.cart)
+        },
+        goToAnotherRoute(route) {
+      // Use this.$router.push to navigate to another route
+                this.$router.push(route);
         }
-        }
+        
+    }
 };
 </script>
 <style>

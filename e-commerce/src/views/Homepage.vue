@@ -12,7 +12,7 @@
           <p class="text-[15px]">Most Popular Item</p>
           <div class="flex w-full h-fit mt-4" @mousedown="PhandleMouseDown" @mouseleave="PhandleMouseLeave" @mouseup="PhandleMouseUp" ref="promotionScroll" >
             <div class="w-full h-full flex overflow-x-hidden gap-14 " @mousemove="PhandleMouseMove" ref="promotionScrollContent">
-                    <Items v-for="i in Items"
+                    <Items v-for="i in PromotionItem"
                     :promotion="i.promotion"  
                     :baseprice="i.baseprice"
                     :DiscountBox="i.DiscountBox" 
@@ -104,10 +104,12 @@
         startX: 0,
         scrollLeft: 0,
         TrandingItem : [],
+        PromotionItem: [],
       };
     },
     mounted(){
       this.TrandingItem = this.Items.filter(Items => Items.tranding)
+      this.PromotionItem = this.Items.filter(Items => Items.promotion)
     },
     components: {
       Navbar,
