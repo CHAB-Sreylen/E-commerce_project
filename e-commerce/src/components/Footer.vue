@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col pt-5 w-full h-[412px] bg-gray-300 gap-5 border-y-2 border-y-black">
-        <div class="flex flex-row w-full gap-8  pl-20 border-b-2 border-b-black">
+    <div class="flex flex-col pt-5 w-full h-[412px] bg-[#FFF2F2] gap-5 border-y border-y-black">
+        <div class="flex flex-row w-full gap-8  pl-20 border-b border-b-black">
             <div class="flex flex-col w-[400px] h-[250px]">
             <ul class="flex flex-col justify-center text-3xl gap-4 font-semibold ">
                 <li ><a class="cursor-pointer" href="#">Ring</a></li>

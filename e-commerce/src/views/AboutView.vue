@@ -42,10 +42,7 @@
             Copyright @ 2023 EVVY Store
         </p>
       </div>
-      <div class="w-full flex flex-col">
-        <div class="w-[50px] h-[50px] rounded-full bg-slate-500"></div>
-      </div>
-
+      <div class="pt-5"><Footer></Footer></div>
   </div>
 </template>
 <script>
@@ -53,6 +50,7 @@
   import { mapState } from 'pinia';
   import Trending from '../components/Trending.vue' ;
   import Navbar from '../components/Navbar.vue';
+  import Footer from '../components/Footer.vue';
 
   
   export default{
@@ -60,6 +58,7 @@
     components:{
       Navbar,
       Trending,
+      Footer,
     
     },
     computed:{

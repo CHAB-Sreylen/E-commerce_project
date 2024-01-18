@@ -108,6 +108,23 @@ export const useEStore = defineStore('todoList', {
         },
 
       ],
+      Trending:[
+        {
+          Img:"./src/assets/Latest.jpg",
+          Title:"Latest product",
+          Detail:"Our design follow the latest  styles to help you update",
+        },
+        {
+          Img:"./src/assets/LatestProduct.jpg",
+          Title:"Best price",
+          Detail:"Our design follow the latest  styles to help you update",
+        },
+        {
+          Img:"./src/assets/packaging.jpg",
+          Title:"Free shipping ",
+          Detail:"Our design follow the latest  styles to help you update",
+        }
+      ],
       PDT:{
         Page: productTheme,
         image: [pdetail1,pdetail2,pdetail3,pdetail4,pdetail5]

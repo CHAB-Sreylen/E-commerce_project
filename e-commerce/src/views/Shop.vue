@@ -32,7 +32,7 @@
 
             </div>
         </div>
-
+        <div><Footer></Footer></div>
     </div>
 </template>
 
@@ -47,6 +47,7 @@
     import Searchbar from '../components/Searchbar.vue';
     import List from '../components/List.vue';
     import Items from '../components/Items.vue';
+    import Footer from '../components/Footer.vue';
 
     export default{
         components:{
@@ -55,7 +56,8 @@
             List,
             Items,
             RouterView,
-            RouterLink
+            RouterLink,
+            Footer,
         },
         computed:{
             ...mapState(useEStore,['CList']),
