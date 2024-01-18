@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col mb-10 " @mouseenter="showChildren" @mouseleave="hideChildren" @click="goToAnotherRoute('/ProductDetail')" >
+    <div class="flex flex-col mb-10 " @mouseenter="showChildren" @mouseleave="hideChildren"  >
         <div class="min-w-[255px] min-h-[350px] bg-[#FFF2F2] flex flex-col relative">
 
             <div class="flex justify-end">
@@ -8,7 +8,7 @@
                 </div>
                 <div class="mr-3" v-else></div>
             </div>
-            <div class="w-full flex absolute top-3 justify-center ">
+            <div class="w-full flex absolute top-3 justify-center " @click="goToAnotherRoute('/ProductDetail')">
                 <img class="Img w-[300px] h-[350px]" :src="img"  alt="" />
             </div>
             <div @click="addToCard" v-if="isChildrenVisible==true" @mouseover="showChildren"  class="absolute bottom-1 w-full px-20 py-3 bg-[#FF6289] text-white font-semibold ">add to card</div>

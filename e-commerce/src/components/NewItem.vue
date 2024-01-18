@@ -1,8 +1,8 @@
 <template>
-    <div class="min-w-[320px] min-h-[524px] relative " @mouseenter="showChildren" @mouseleave="hideChildren" @click="goToAnotherRoute('/ProductDetail')" >
+    <div class="min-w-[320px] min-h-[524px] relative " @mouseenter="showChildren" @mouseleave="hideChildren"  >
 
         <div class="w-full h-[442px] absolute top-0 bg-[#FFF2F2]"></div>
-        <img :src="img" class="w-full h-[442px] absolute top-0 object-contain" alt="">
+        <img :src="img" class="w-full h-[442px] absolute top-0 object-contain" @click="goToAnotherRoute('/ProductDetail')" alt="">
         
         
         <div @click="addToCard" v-if="isChildrenVisible==true" @mouseover="showChildren"  class="absolute bottom-24 w-full px-28 py-3 bg-[#FF6289] text-white font-semibold ">add to card</div>
