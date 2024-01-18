@@ -51,7 +51,12 @@
         </div>
         <HomeView></HomeView>
       </div>
+      <div class="flex">
+        <Footer></Footer>
+      </div>
+      
     </div>
+    
   </template> 
   
   <style>
@@ -89,7 +94,7 @@
     import {useImage} from '../stores/images';
     import {mapState} from 'pinia';
     import { useEStore } from '../stores/eStore'
-    import { reactive } from 'vue'
+    import Footer from '../components/Footer.vue'
 
     export default {
       name: "App",
@@ -114,6 +119,7 @@
       RouterView,
       TrendingItem,
       Items,
+      Footer,
       },
       computed:{
             ...mapState(useImage,['Pic']),
