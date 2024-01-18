@@ -81,22 +81,29 @@ export const useEStore = defineStore('todoList', {
         }
       ],
       CList:[
+        // {
+        //   title:"Promotion",
+        //   name: ["Ring","Bracelet","Necklace","Earing","a","b","c"],
+        //   link: "/shop/",
+        // },
         {
-          title:"Promotion",
-          name: ["Ring","Bracelet","Necklace","Earing","a","b","c"]
+          title:"Category",
+          name: [{n: "Ring", path: "/ring"},{n: "branclate", path: "/shop/brance"},{n: "Necklace", path: "/shop/necklace"},{n: "Earring", path: "/shop/earring"}],
+          link: "/shop",
         },
-        {
-          title: "Category",
-          name: ["Ring","Bracelet","Necklace","Earing","a","b","c"]
-        },
-        {
-          title: "Size",
-          name: ["Extra Large","Large","Medium","Small","Extra small"]
-        },
-        {
-          title: "Collection",
-          name: ["2022","2021"]
-        },
+        // {
+        //   title: "Category",
+        //   Items: [{name: "RING", path: "/ring"},{name: "BRANCLET", path: "/branclate"},{name: "NECKLACE", path: "/necklace"},{name: "EARRING", path: "/earring"}],
+        //   link: "/"
+        // },
+        // {
+        //   title: "Size",
+        //   name: ["Extra Large","Large","Medium","Small","Extra small"]
+        // },
+        // {
+        //   title: "Collection",
+        //   name: ["2022","2021"]
+        // },
 
       ],
       PDT:{
@@ -125,6 +132,7 @@ export const useEStore = defineStore('todoList', {
           price:"70$",
           tranding: true,
           new: true,
+          category: "ring",
         },
         { 
           DiscountBox:true,
@@ -136,6 +144,7 @@ export const useEStore = defineStore('todoList', {
           price:"22.5$",
           tranding: true,
           new: true,
+          category: "ring"
         },
         { 
           DiscountBox:true,
@@ -151,6 +160,7 @@ export const useEStore = defineStore('todoList', {
           img:"./src/assets/PlumeRing.png",
           name:"Plume Ring",
           price:"20$",
+          category: "ring",
         },
         {
           DiscountBox:true,

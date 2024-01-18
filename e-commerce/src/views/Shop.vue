@@ -6,7 +6,7 @@
         <div class="h-fit w-full flex mt-24 gap-[19px] justify-around px-2 ">
             <div class=" w-[342px] flex flex-col gap-5">
                 <Searchbar></Searchbar>
-                <List v-for="c in CList" :title="c.title" :name="c.name"></List>
+                <List v-for="c in CList" :title="c.title" :name="c.name" :link="c.link" ></List>
             </div>
             <div class=" w-[1055px]">
                 <div class="w-full h-[57px] flex items-center justify-between">
@@ -19,8 +19,8 @@
                     </div>
                 </div>
                 <!-- items component for shop layout column 3 -->
-                
-                <div class="AllItems flex flex-wrap justify-between ">
+                <RouterView></RouterView>
+                <!-- <div class="AllItems flex flex-wrap justify-between ">
                     <Items v-for="i in Items"
                     :promotion="i.promotion"  
                     :baseprice="i.baseprice"
@@ -28,7 +28,7 @@
                     :discount="i.discount" 
                     :img = "i.img" :name="i.name" 
                     :price="i.price"> </Items>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -40,6 +40,7 @@
 <script>
     import {useEStore} from '../stores/eStore';
     import {mapState} from 'pinia';
+    import { RouterView } from 'vue-router';
 
     import Navbar from '../components/Navbar.vue';
     import Searchbar from '../components/Searchbar.vue';
@@ -52,6 +53,7 @@
             Searchbar,
             List,
             Items,
+            RouterView
         },
         computed:{
             ...mapState(useEStore,['CList']),
